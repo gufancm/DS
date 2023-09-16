@@ -1,0 +1,15 @@
+// 带头节点的单链表逆置
+
+void Reserve(SingleList L) {
+	LNode* p = L->link;
+	LNode* q = L->link->link;
+	if (L == NULL || L->link == NULL)
+		return;
+	while (q != NULL)
+	{
+		p->link = q->link;
+		q->link = L->link;
+		l->link = q;
+		q = p->link;
+	}
+}
