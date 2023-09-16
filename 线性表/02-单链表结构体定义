@@ -1,0 +1,10 @@
+// 单链表结构体定义
+typedef struct node {
+	ElemType element; 
+	struct node* link;
+}Node;
+
+typedef struct SingleList {
+	Node *first;
+	int n;
+}SingleList;
