@@ -1,5 +1,5 @@
 // 长度为n的顺序表L，删除所有值为x的数据元素
-void del_x(SeqList& L, ElemType x) {
+void del_x(SeqList &L, ElemType x) {
 	int k = 0, i = 0;
 	while (i < L->n) {
 		if (L->element[i] == x)
