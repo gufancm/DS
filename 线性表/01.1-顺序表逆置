@@ -1,7 +1,7 @@
 // 顺序表逆置    空间复杂度为O(1)
 void Reserve(SeqList& L) {
 	ElemType temp;
-	for (i = 0; i < L->n; i++) {
+	for (i = 0; i < L->n/2; i++) {
 		temp = L->element[i];
 		L->element[i] = L->element[L->n - i - 1];
 		L->element[L->n - i - 1] = temp;
