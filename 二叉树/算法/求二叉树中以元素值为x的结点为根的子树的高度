@@ -1,0 +1,19 @@
+// 递归算法
+// 求二叉树中以元素值为x的结点为根的子树的高度
+
+typedef sturct BiTNode{
+	ElemType data;
+	BiTNode *lchild,*rchild;
+}BiTNode,*BiTNode;
+
+int getDeepth(BiTree T)
+{
+	int l,r;
+	if(T->data == x)
+	{	l = getDeepth(T-lchild);
+		r = getDeepth(T-rchild);
+		return l > r ? l : r;
+	}
+	else
+		return 0;
+}
