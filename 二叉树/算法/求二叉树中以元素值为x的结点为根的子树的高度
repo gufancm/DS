@@ -11,8 +11,8 @@ int getDepth(BiTree T)
 	int l,r;
 	if(T->data == x)
 	{	l = getDepth(T-lchild);
-		r = getDepth(T-rchild);
-		return l > r ? l : r;
+	 	r = getDepth(T-rchild);
+ 		return l > r ? l : r;
 	}
 	else
 		return 0;
