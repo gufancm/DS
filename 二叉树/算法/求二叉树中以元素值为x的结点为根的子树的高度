@@ -6,12 +6,12 @@ typedef sturct BiTNode{
 	BiTNode *lchild,*rchild;
 }BiTNode,*BiTNode;
 
-int getDeepth(BiTree T)
+int getDepth(BiTree T)
 {
 	int l,r;
 	if(T->data == x)
-	{	l = getDeepth(T-lchild);
-		r = getDeepth(T-rchild);
+	{	l = getDepth(T-lchild);
+		r = getDepth(T-rchild);
 		return l > r ? l : r;
 	}
 	else
