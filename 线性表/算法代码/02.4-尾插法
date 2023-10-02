@@ -1,0 +1,17 @@
+// 尾插法建立一个带头结点的单链表，输入-1表示结束，结果返回建立的单链表
+
+LinkList HeadInsert(SingseList& L) {
+	L = (LNode*)malloc(sizeof(LNode));
+	L->link = NULL;
+	LNode* s, * x = L;
+	int x;
+	while (x != -1) {
+		s = (LNode*)malloc(sizeof(LNode));
+		s->element = x;
+		r->link = s;
+		L = s;
+		scanf("%d", &x);
+	}
+	r->link = NULL;
+	return L;
+}
