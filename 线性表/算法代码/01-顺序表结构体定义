@@ -1,0 +1,7 @@
+// 01-顺序表结构体定义
+typedef struct SeqList {
+	int n;
+	int maxLength;
+	ElemType* element;
+}SeqList;
+
