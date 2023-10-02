@@ -1,0 +1,20 @@
+// 将两个有序的顺序表合并为一个
+bool Merge(SeqList A, SeqList B, SeqList &C) {
+	if (A->n + B->n > C->n)
+		return false;
+	int i = 0, j = 0, k = 0;
+	while (i < A->n && j < B->n) {
+		if (A->element[i] <= B->element[j])
+			C->element[k++] = A->element[i++];
+		else
+			C->element[k++] = B->element[j++];
+	}
+	while (i < A->n) {
+		C->element[k++] = A->element[i++];
+	}
+	while (j < B->n) {
+		C->element[k++] = B->element[j++];
+	}
+	C->n = k;
+	return true;
+}
