@@ -1,0 +1,16 @@
+// 带头结点的单链表L中删除一个最小值结点的高效算法（假设最小值结点唯一）
+
+void Del_Min(SingleList& L) {
+	LNode* pre = L, * p = L->link;
+	LNode* minpre = pre, * minp = p;
+	while (p != NULL) {
+		if (p->element < minp->element) {
+			minp = p;
+			minpre = pre;
+		}
+		pre = p;
+		p = p->link;
+	}
+	minpre->link = minp->link;
+	free(minp);
+}
