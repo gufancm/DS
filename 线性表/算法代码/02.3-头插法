@@ -1,6 +1,6 @@
 // 头插法建立一个带头结点的单链表，输入-1表示结束，结果返回建立的单链表
 
-LinkList HeadInsert(SingseList& L) {
+SingleList HeadInsert(SingseList& L) {
 	L = (LNode*)malloc(sizeof(LNode));
 	L->link = NULL;
 	LNode* s, * x;
