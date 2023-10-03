@@ -1,0 +1,28 @@
+// 将有序递增的单链表中数据值在a到b（a<=b）之间的元素删除
+void Delete_a_b(SingleList* L, ElemType a, ElemType b) {
+	Node* p, * q;
+	if (!L->n)
+		return false;
+	p = L->first;
+	q = L->first;
+	while (p && p->element < b) {
+		if (p->element > a) {
+			q = p;
+			p = p->link;
+		}
+		else if (q == L->first) {
+			q = p->link;
+			first = q;
+			L->free(p);
+			L->n--;
+			p = q;
+		}
+		else
+		{
+			q->link = p->link;
+			free(p);
+			L->n--;
+			p = q->link;
+		}
+	}
+}
