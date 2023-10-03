@@ -1,0 +1,24 @@
+// 带头结点的单链表的插入
+typedef struct node {
+	Element element;
+	struct node* link;
+}Node;
+typedef struct HeaderList {
+	Node* head;
+	int n;
+}HeaderList;
+bool Insert(HeaderList* h, int i, ElemType x) {
+	Node* p, *q;
+	int j;
+	if (i < -1 || i > h->n - 1) 
+		return false;
+	p = h->head;
+	for (j = 0; j <= i; j++) 
+		p = p->link;
+	q = (Node*)malloc(sizeof(Node));
+	q->element = x;
+	q->link = p->link;
+	p->link = q;
+	h->n++;
+	return true;
+}
