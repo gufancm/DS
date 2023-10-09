@@ -1,0 +1,11 @@
+// 在一棵以二又链表为存储结构的二又树中，查找数据域值等于key的结点是否存在，如果存在，则将指针q指向该结点，假设结点数据域为int 型。（二叉树中结点值都不相同）
+int Search_key(BinaryTree T, BTNode *&q, int key) {
+	if (T != NULL) {
+		if (T->element == key)
+			q = T;
+		else {
+			Search_key(T->lChild, q, key);
+			Search_key(T->rChild, q, key);
+		}
+	}
+}
