@@ -1,0 +1,11 @@
+// 二叉树结点结构体
+typedef struct btnode {
+	ElemType element;
+	struct btnode* lChild;
+	struct btnode* rChild;
+}BTNode;
+
+// 二叉树结构体
+typedef struct binarytree {
+	btnode* root;
+}BinaryTree;
