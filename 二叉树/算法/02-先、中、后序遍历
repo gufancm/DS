@@ -1,0 +1,26 @@
+// 先序遍历
+int PreOrder(btnode* t) {
+	if (!t)
+		return 0;
+	printf("%c", t->element);
+	PreOrder(t->lChild);
+	PreOrder(t->rChild);
+}
+
+// 中序遍历
+int InOrder(btnode* t) {
+	if (!t)
+		return 0;
+	InOrder(t->lChild);
+	printf("%c", t->element);
+	InOrder(t->rChild);
+}
+
+// 后序遍历
+int PostOrder(btnode* t) {
+	if (!t)
+		return 0;
+	PostOrder(t->lChild);
+	PostOrder(t->rChild);
+	printf("%c", t->element);
+}
