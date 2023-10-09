@@ -1,0 +1,12 @@
+// 假设二叉树采用二叉链表形式存储，设计一个算法，求先序遍历序列中第k(1≤k≤二叉树中结点个数)个结点的值。
+int n = 0;
+void Search_k(BinaryTree T, int k) {
+	if (T != NULL) {
+		n++;
+		if (n == k)
+			printf("%c", T->element);
+			return;
+		Search_k(T->lChild, k);
+		Search_k(T->rChild, k);
+	}
+}
