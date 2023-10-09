@@ -1,0 +1,22 @@
+// 层次遍历
+#define QUEUESIZE 100
+void LevelOrder(BinaryTree* t) {
+	if (!t->root)
+		return;
+	Queue Q;
+	Creat(&Q, QUEUESIZE);
+	BTnode* p = t->root;
+	EnQueue(&Q, p);
+	while (!IsEmpty(&Q)) {
+		Front(&Q, &p);
+		DeQueue(&Q);
+		printf("%c", p->element);
+		if (p->lChild) {
+			EnQueue(&Q, p->lChild);
+		}
+		if (p->rChild) {
+			EnQueue(&Q, p->rChild);
+		}
+	}
+	Destory(&Q);
+}
