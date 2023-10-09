@@ -1,0 +1,12 @@
+// 利用递归计算二叉树中所有叶子结点的个数。
+int Count(BinaryTree T) {
+	int l, r;
+	if (T == NULL)
+		return 0;
+	else if (T->lChild == NULL && T->rChlid == NULL) {
+		return 1；
+	else
+		l = Count(l->lChild);
+		r = Count(l->rChild);
+		return l + r;
+}
