@@ -1,0 +1,29 @@
+// 写出二叉树的自下而上、从右到左的层次遍历算法。
+#define QUEUESIZE 100;
+#define STACKSIZE 100;
+void ReverseLevelOrder(BinaryTree T) {
+	if (T == NULL)
+		return;
+	Queue Q;
+	Stack S;
+	Creat(&Q, QUEUESIZE);
+	Creat(&S, STACKSIZE);
+	BTNode* p = T;
+	EnQueue(&Q, p);
+	while (!IsEmpty(&Q)) {
+		Front(&Q, &p);
+		DeQueue(&Q);
+		Push(&S, p);
+		if (p->lChild) 
+			EnQueue(&Q, p->Child);
+		if (p->rChild)
+			EnQueue(&Q, p->rChild);
+	}
+	Destory(&Q);
+	while (!IsEmpty(&S)) {
+		Top(&S, &p);
+		Pop(&S);
+		print("%c", p->element);
+	}
+	Destory(&S);
+}
