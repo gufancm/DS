@@ -1,0 +1,11 @@
+// 利用递归计算二叉树的深度。
+int Depth(BinaryTree T) {
+	int ldepth, rdepth;
+	if (T == NULL)
+		return 0;
+	else {
+		ldepth = Depth(T->lChild);
+		rdepth = Depth(T->rChild);
+		return ldepth > rdepth ? ldepth + 1 : rdepth + 1;
+	}
+}
