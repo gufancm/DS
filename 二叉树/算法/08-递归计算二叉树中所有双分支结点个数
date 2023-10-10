@@ -1,0 +1,16 @@
+// 利用递归计算二叉树中所有双分支结点个数。
+int Count(BinaryTree T) {
+	int l, r;
+	if (T == NULL)
+		return 0;
+	else if (T->lChild && T->rChild) {
+		l = Count(T->lChild);
+		r = Count(T->rChild);
+		return l + r + 1;
+	}
+	else {
+		l = Count(T->lChild);
+		r = Count(T->rChild);
+		return l + r ;
+	}
+}
