@@ -1,0 +1,12 @@
+// 设树B是一棵采用二叉链表形式存储的二叉树，编写一个把树B中所有结点的左、右子树进行交换的函数。
+void Swap(BinaryTree &B) {
+	if (B == NULL)
+		return;
+	else {
+		BTNode* temp = B->lChild;
+		B->lChild = B->rChild;
+		B->rChild = temp;
+		Swap(B->lChild);
+		Swap(B->rChild);
+	}
+}
