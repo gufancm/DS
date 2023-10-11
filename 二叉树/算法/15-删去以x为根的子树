@@ -1,0 +1,40 @@
+// 已知二叉树采用二叉链表形式存储，设计一个算法完成：对于树中每个元素值为x的结点，删去以它为根的子树，并释放相应的空间。
+void DeleteTree(BinaryTree T) {
+	if (T != NULL)
+		DeleteTree(T->lChild);
+		DeleteTree(T->rChild);
+		free(T);
+}
+#define QUEUESIZE 100
+void Search_x(BinaryTree &T,int x) {
+	if (T == NULL)
+		return;
+	if (T - element == x) {
+		DeleteTree(T);
+		return;
+	}
+	Queue Q;
+	Creat(&Q, QUEUESIZE);
+	BTNode* p = T;
+	EnQueue(&Q, p);
+	while (!IsEmpty(&Q)) {
+		Front(&Q, &p);
+		DeQueue(&Q);
+		if (p->lChild) {
+			if (p->lChild->element == x) {
+				DeleteTree(p->lChild);
+				p->lChild = NULL;
+			}
+			else
+				EnQueue(&Q, p->lChild);
+		}
+		if (p->rChild) {
+			if (p->rChild->element == x) {
+				DeleteTree(p->rChild);
+				p->rChild = NULL;
+			}
+			else
+				EnQueue(&Q, p->rChild);
+		}
+	}
+}
