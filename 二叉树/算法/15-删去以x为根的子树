@@ -9,7 +9,7 @@ void DeleteTree(BinaryTree T) {
 void Search_x(BinaryTree &T,int x) {
 	if (T == NULL)
 		return;
-	if (T - element == x) {
+	if (T->element == x) {
 		DeleteTree(T);
 		return;
 	}
