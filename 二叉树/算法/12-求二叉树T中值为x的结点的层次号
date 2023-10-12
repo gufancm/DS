@@ -4,8 +4,8 @@ void Search_x_level(BinaryTree T, int x, int level) {
 		if (T->element == x)
 			printf("二叉树T中值为x的结点的层次为%d", &level)
 		else {
-			Search_x_level(T->lChild);
-			Search_x_level(T->rChild);
+			Search_x_level(T->lChild, x, level+1);
+			Search_x_level(T->rChild, x, level+1);
 		}
 	}
 }
