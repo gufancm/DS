@@ -1,0 +1,26 @@
+// 非递归后序遍历
+#defind MaxSize 100
+void PostOrder(BinaryTree T) {
+	Stack S;
+	Create(&S, MaxSize);
+	BTNode* p = T, * r = NULL;
+	while (p || (!IsEmpty(&S))) {
+		if (p != NULL) {
+			Push(&S, p);
+			p = p->rChild;
+		}
+		else {
+			Top(&S, &p);
+			if (p->rChild && p->rChild != r) {
+				p = p->rChild;
+			}
+			else {
+				Top(&S, &p);
+				Pop(&S);
+				printf("%d", p->element);
+				r = p;
+				p = NULL;
+			}
+		}
+	}
+}
