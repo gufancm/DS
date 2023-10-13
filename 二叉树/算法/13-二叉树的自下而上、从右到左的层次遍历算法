@@ -6,8 +6,8 @@ void ReverseLevelOrder(BinaryTree T) {
 		return;
 	Queue Q;
 	Stack S;
-	Creat(&Q, QUEUESIZE);
-	Creat(&S, STACKSIZE);
+	Create(&Q, QUEUESIZE);
+	Create(&S, STACKSIZE);
 	BTNode* p = T;
 	EnQueue(&Q, p);
 	while (!IsEmpty(&Q)) {
