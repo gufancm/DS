@@ -4,7 +4,7 @@ int IsComplete(BinaryTree T) {
 	if (T == NULL)
 		return 1;
 	Queue Q;
-	Creat(&Q, QUEUESIZE);
+	Create(&Q, QUEUESIZE);
 	BTNode* p = T;
 	EnQueue(&Q, p);
 	while (!IsEmpty(&Q)) {
