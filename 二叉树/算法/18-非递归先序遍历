@@ -2,7 +2,7 @@
 #define MaxSize 100
 void PreOrder(BinaryTree T) {
 	Stack S;
-	Creat(&S, MaxSize);
+	Create(&S, MaxSize);
 	BTNode* p = T;
 	while (p || (!IsEmpty(&S))) {
 		if (T != NULL) {
