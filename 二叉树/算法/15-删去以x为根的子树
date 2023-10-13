@@ -14,7 +14,7 @@ void Search_x(BinaryTree &T,int x) {
 		return;
 	}
 	Queue Q;
-	Creat(&Q, QUEUESIZE);
+	Create(&Q, QUEUESIZE);
 	BTNode* p = T;
 	EnQueue(&Q, p);
 	while (!IsEmpty(&Q)) {
