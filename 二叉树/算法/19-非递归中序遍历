@@ -1,0 +1,19 @@
+// 非递归中序遍历
+#define MaxSize 100
+void InOrder(BinaryTree T) {
+	Stack S;
+	Create(&S, MaxSize);
+	BTNode* p = T;
+	while (p || (!IsEmpty(&S)) {
+		if (T != NULL) {
+			Push(&S, p);
+			p = p->lChild;
+		}
+		else {
+			Top(&S, &p);
+			Pop(&S);
+			printf("%c", p->element);
+			p = p->rChild;
+		}
+	}
+}
